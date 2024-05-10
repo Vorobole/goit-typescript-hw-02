@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import css from './ImageModal.module.css';
-import Modal from 'react-modal';
-import { ImageSrc } from '../App';
+import { FC } from "react";
+import css from "./ImageModal.module.css";
+import Modal from "react-modal";
+import { ImageSrc } from "../../App";
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -15,7 +15,7 @@ const ImageModal: FC<ImageModalProps> = ({
   photo,
   onChange,
 }) => {
-  Modal.setAppElement(document.getElementById('root') as HTMLElement);
+  Modal.setAppElement(document.getElementById("root") as HTMLElement);
   return (
     <Modal
       className={css.modal}

@@ -1,7 +1,7 @@
-import css from './ImageCard.module.css';
-import { MouseEvent } from 'react';
-import { ImageSrc } from '../App';
-import { FC } from 'react';
+import css from "./ImageCard.module.css";
+import { MouseEvent } from "react";
+import { FC } from "react";
+import { ImageSrc } from "../../App";
 
 interface ImageCardProps {
   card: {

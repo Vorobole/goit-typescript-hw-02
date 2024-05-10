@@ -1,7 +1,8 @@
-import ImageCard from '../ImageCard/ImageCard';
-import css from './ImageGallery.module.css';
-import { ImageSrc } from '../App';
-import { FC } from 'react';
+import { ImageSrc } from "../../App";
+import ImageCard from "../ImageCard/ImageCard";
+import css from "./ImageGallery.module.css";
+
+import { FC } from "react";
 
 export type ImageId = {
   id: string;
@@ -18,7 +19,7 @@ interface ImageGalleryProps {
 const ImageGallery: FC<ImageGalleryProps> = ({ photos, onSelect }) => {
   return (
     <ul className={css.list}>
-      {photos.map(photo => (
+      {photos.map((photo) => (
         <li className={css.item} key={photo.id}>
           <ImageCard card={photo} onSelect={onSelect} />
         </li>
