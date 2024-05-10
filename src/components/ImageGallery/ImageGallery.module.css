@@ -1,6 +1,5 @@
 .list {
   display: flex;
-  justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 20px;

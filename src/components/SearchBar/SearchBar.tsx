@@ -1,22 +1,28 @@
-import css from "./SearchBar.module.css";
-import toast from "react-hot-toast";
-import { useState } from "react";
-import { FiSearch } from "react-icons/fi";
+import css from './SearchBar.module.css';
+import toast from 'react-hot-toast';
+import { useState, FormEvent, ChangeEvent } from 'react';
+import { FiSearch } from 'react-icons/fi';
+import { FC } from 'react';
 
-const SearchBar = ({ onSubmit }) => {
-  const [value, setValue] = useState("");
+type SubmitType = {
+  onSubmit: (arg0: string) => void;
+  isLoading: boolean;
+};
 
-  const handleSubmit = (e) => {
+const SearchBar: FC<SubmitType> = ({ onSubmit, isLoading }) => {
+  const [value, setValue] = useState('');
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const query = value.trim();
     if (!query.length) {
-      toast.error("Please, enter what you want to find. 🤔");
+      toast.error('Please, enter your query');
     }
 
     onSubmit(query);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setValue(value);
   };
