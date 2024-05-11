@@ -5,7 +5,7 @@ import { ImageSrc } from "../../App";
 
 interface ImageModalProps {
   isOpen: boolean;
-  photo: { src: string };
+  photo: ImageSrc;
 
   onChange: (arg0: boolean, arg1: ImageSrc) => void;
 }
@@ -20,7 +20,7 @@ const ImageModal: FC<ImageModalProps> = ({
     <Modal
       className={css.modal}
       isOpen={isOpen}
-      onRequestClose={() => onChange}
+      onRequestClose={() => onChange(false, photo)}
       shouldCloseOnOverlayClick={true}
       shouldCloseOnEsc={true}
       preventScroll={true}
